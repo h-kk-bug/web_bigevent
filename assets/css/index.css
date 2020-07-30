@@ -23,6 +23,7 @@
   .layui-nav-img {
       width: 40px;
       height: 40px;
+      display: none;
   }
   .userinfo {
       height: 60px;
@@ -47,5 +48,7 @@
     top: 4px;
     margin-right: 10px;
     color: #fff;
+    display: none;
   }
+  
   

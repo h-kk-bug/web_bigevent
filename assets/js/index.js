@@ -28,7 +28,7 @@ function getUsetInfo() {
         //     Authorization : localStorage.getItem('token') || '',
         // },
         success : function(res) {
-            console.log(res);
+            // console.log(res);
             if(res.status !== 0) {
                 return layui.layer.msg('获取用户信息失败')
             } 
@@ -36,17 +36,17 @@ function getUsetInfo() {
             renderAvatar(res.data);
         },
         // 不论成功还是失败最终都会调用complete函数
-        complete : function(res) {
-            console.log('执行了complete函数');
-            console.log(res);
-            // 在complete函数中,使用responseJSON拿到服务器响应回来的数据
-            if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                // 1.强制清空token 
-                localStorage.removeItem('token');
-                // 2.强制跳转到登录页面
-                location.href = '/login.html';
-            } 
-        }
+        // complete : function(res) {
+        //     console.log('执行了complete函数');
+        //     console.log(res);
+        //     // 在complete函数中,使用responseJSON拿到服务器响应回来的数据
+        //     if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+        //         // 1.强制清空token 
+        //         localStorage.removeItem('token');
+        //         // 2.强制跳转到登录页面
+        //         location.href = '/login.html';
+        //     } 
+        // }
     })
 }
 // 渲染用户的头像
